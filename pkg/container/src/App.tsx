@@ -3,7 +3,7 @@ import { RouterView } from 'vue-router'
 export const App = defineComponent({
   setup: (props, context) => {
     return () => (
-      <div>
+      <div container mx-auto>
         <RouterView />
       </div>
     )

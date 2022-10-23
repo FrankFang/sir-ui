@@ -1,8 +1,17 @@
 import '@vue/runtime-dom'
 
+interface ExtraAttributes {
+  flex?: boolean
+  btn?: boolean
+  container?: boolean
+}
+
 declare module 'vue' {
-  interface HTMLAttributes {
-    flex?: boolean
-    btn?: boolean
+  interface HTMLAttributes extends ExtraAttributes { }
+}
+
+declare global {
+  namespace JSX {
+    interface IntrinsicAttributes extends ExtraAttributes { }
   }
 }

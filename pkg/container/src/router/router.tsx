@@ -1,10 +1,18 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { createMicroApp } from '../components/MicroApp'
 import { NotFound } from '../components/NotFound'
+import { GuideLayout } from '../layouts/GuideLayout'
+import { Intro } from '../views/guide/Intro'
 import { Home } from '../views/Home'
 
 const routes = [
   { path: '/', component: Home },
+  {
+    path: '/guide', component: GuideLayout,
+    children: [
+      { path: 'intro', component: Intro }
+    ]
+  },
   {
     path: '/app1',
     component: createMicroApp({
