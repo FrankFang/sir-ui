@@ -1,7 +1,8 @@
 import { useToggle, onClickOutside } from '@vueuse/core';
 import { defineComponent, ref } from 'vue';
-import { RouterView } from 'vue-router';
-import { Icon } from '../components/Icon';
+import { RouterView } from 'vue-router'
+import { Icon } from '../components/Icon'
+import s from './GuideLayout.module.scss'
 export const GuideLayout = defineComponent({
   setup: (props, context) => {
     const [menuVisible, toggleMenuVisible] = useToggle(false)
@@ -21,9 +22,13 @@ export const GuideLayout = defineComponent({
             <span>菜单</span>
           </div>
         </div>
-        <aside hidden class={menuVisible.value ? 'dyn-flex' : ''}
-          fixed left-0 top-0 w="100%" h="100%" bg-black bg-opacity-50>
-          <div ref={asideInner} w="[calc(100%-64px)]" bg-white>
+        <div class={[s.overlay, menuVisible.value && s.overlay_active]} left-0 top-0 bg-black bg-opacity-50
+          w="100%" h="100%" fixed z-1
+        ></div>
+        <aside class={[s.aside, menuVisible.value && s.active]}
+          fixed z-2 left-0 top-0 w="100%" h="100%" >
+          <div class={s.inner} ref={asideInner} w="[calc(100%-120px)]" h="100%" bg-white
+            absolute z-2>
             <section>
               <h2>开始</h2>
               <p>介绍</p>
