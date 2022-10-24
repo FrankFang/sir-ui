@@ -29,7 +29,7 @@ export const HomeLayout = defineComponent({
           </RouterLink>
           <div hidden md-block class={menuVisible.value ? 'dyn-block' : ''} >
             <div absolute top="100%" mt-1px left-0 w='100%' bg-white
-              flex justify-center items-center shadow text-xs p-16px
+              flex justify-center items-center shadow p-16px
               md="relative top-0 shadow-none p-0 m-0"
             >
               <ul flex md-flex-row flex-col w-20em max-w="80%"

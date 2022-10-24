@@ -5,7 +5,7 @@ import { Icon } from '../components/Icon'
 import s from './GuideLayout.module.scss'
 export const GuideLayout = defineComponent({
   setup: (props, context) => {
-    const [menuVisible, toggleMenuVisible] = useToggle(false)
+    const [menuVisible, toggleMenuVisible] = useToggle(true)
     const onToggleMenu = () => {
       toggleMenuVisible()
     }
@@ -16,7 +16,7 @@ export const GuideLayout = defineComponent({
     })
     return () => (
       <div>
-        <div p-16px border-b-1 text-gray>
+        <div p-16px border-b-1>
           <div flex items-center gap-x-4px onClick={onToggleMenu}>
             <Icon name="menu" />
             <span>菜单</span>
@@ -27,14 +27,14 @@ export const GuideLayout = defineComponent({
         ></div>
         <aside class={[s.aside, menuVisible.value && s.active]}
           fixed z-2 left-0 top-0 w="100%" h="100%" >
-          <div class={s.inner} ref={asideInner} w="[calc(100%-120px)]" h="100%" bg-white
+          <div class={s.inner} ref={asideInner} min-w-13em h="100%" bg-white
             absolute z-2>
             <section>
               <h2>开始</h2>
               <p>介绍</p>
               <p>安装</p>
             </section>
-            <section>
+            <section >
               <h2>组件</h2>
               <p>Icon</p>
               <p>Button</p>

@@ -1,9 +1,10 @@
 .aside, .overlay { transition: all 0.5s ease-in-out; }
 .aside {
   transform: translateX(-100%); opacity: 0; visibility: hidden;
-  &.active {
-    visibility: visible; opacity: 1; transform: translateX(0%);
-  }
+  &.active { visibility: visible; opacity: 1; transform: translateX(0%); }
+  section{ padding: 0 16px; margin: 16px 0; }
+  h2 { margin-bottom: 8px; font-size: 1.25em; }
+  p { color: #666; margin: 4px 0; }
 }
 .overlay { visibility: hidden; opacity: 0;
   &_active { visibility: visible; opacity: 1; }
