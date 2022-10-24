@@ -3,6 +3,7 @@ import { defineComponent, PropType, ref } from 'vue';
 import { RouterLink, RouterView } from 'vue-router';
 import { Icon } from '../components/Icon';
 import logo from '../assets/images/logo.png'
+import { MenuIcon, MenuIconStyles } from '../components/MenuIcon';
 export const HomeLayout = defineComponent({
   props: {
     name: {
@@ -43,7 +44,7 @@ export const HomeLayout = defineComponent({
           <div flex items-center justify-center px-8px onClick={onToggleMenu}
             md-hidden
           >
-            {menuVisible.value ? <Icon name="close" /> : <Icon name="menu" />}
+            <MenuIcon active={menuVisible.value} />
           </div>
         </nav>
         <main min-h-400px>

@@ -1,0 +1,59 @@
+.wrapper {
+  position: relative;
+  overflow: hidden;
+
+  >span {
+    transition: all 0.25s;
+    position: absolute;
+    left: 0;
+    top: 7px;
+    height: 2px;
+    background: #333;
+    width: 16px;
+
+    &:nth-child(1) {
+      transform: translateX(0px) translateY(-6px);
+    }
+
+    &:nth-child(2) {
+      transform: translateX(8px);
+    }
+
+    &:nth-child(3) {
+      transform: translateX(4px) translateY(6px);
+    }
+  }
+
+  &:hover {
+    >span {
+
+      &:nth-child(1) {
+        transform: translateX(8px) translateY(-6px);
+      }
+
+      &:nth-child(2) {
+        transform: translateX(0px);
+      }
+
+      &:nth-child(3) {
+        transform: translateX(4px) translateY(6px);
+      }
+    }
+  }
+
+  &.active {
+    >span {
+      &:nth-child(1) {
+        transform: translateX(0px) translateY(0px) rotate(225deg);
+      }
+
+      &:nth-child(2) {
+        transform: translateX(16px) translateY(0px);
+      }
+
+      &:nth-child(3) {
+        transform: translateX(0px) translateY(0px) rotate(135deg);
+      }
+    }
+  }
+}
