@@ -4,11 +4,19 @@ import {
 } from 'unocss'
 
 export default defineConfig({
+  safelist: 'display-hidden display-flex'.split(' '),
+  layers: {
+    default: 1,
+    helpers: 2,
+  },
   theme: {
     colors: {
       primary: '#4285f4'
     }
   },
+  rules: [
+    ['status-block', { display: 'block' }, { layer: 'helpers' }],
+  ],
   shortcuts: [
     {
       'btn': 'inline-flex items-center justify-center rounded b-1 '
@@ -22,6 +30,8 @@ export default defineConfig({
           return 'bg-white text-primary b-secondary'
         case 'danger':
           return 'bg-red-500 text-white b-red-500'
+        case 'sm':
+          return 'p-4px text-sm'
         default:
           return ''
       }
