@@ -13,6 +13,7 @@ interface ExtraAttributes {
   shadow?: boolean
   hidden?: boolean
   md?: string
+  bg?: string
 }
 
 declare module 'vue' {

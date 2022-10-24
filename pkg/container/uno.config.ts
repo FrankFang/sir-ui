@@ -7,7 +7,7 @@ export default defineConfig({
   safelist: 'display-hidden display-flex'.split(' '),
   layers: {
     default: 1,
-    helpers: 2,
+    dynamic: 2,
   },
   theme: {
     colors: {
@@ -15,7 +15,9 @@ export default defineConfig({
     }
   },
   rules: [
-    ['status-block', { display: 'block' }, { layer: 'helpers' }],
+    ['dyn-block', { display: 'block' }, { layer: 'dynamic' }],
+    ['dyn-flex', { display: 'flex' }, { layer: 'dynamic' }],
+    ['dyn-inline-flex', { display: 'inline-flex' }, { layer: 'dynamic' }],
   ],
   shortcuts: [
     {
