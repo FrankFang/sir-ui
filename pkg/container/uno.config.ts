@@ -11,7 +11,8 @@ export default defineConfig({
   },
   theme: {
     colors: {
-      primary: '#4285f4'
+      primary: '#4285f4',
+      secondary: 'white'
     }
   },
   rules: [

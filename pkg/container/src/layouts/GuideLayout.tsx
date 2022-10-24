@@ -5,7 +5,7 @@ import { Icon } from '../components/Icon'
 import s from './GuideLayout.module.scss'
 export const GuideLayout = defineComponent({
   setup: (props, context) => {
-    const [menuVisible, toggleMenuVisible] = useToggle(true)
+    const [menuVisible, toggleMenuVisible] = useToggle(false)
     const onToggleMenu = () => {
       toggleMenuVisible()
     }
