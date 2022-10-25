@@ -1,14 +1,15 @@
 {
-  "name": "app3",
+  "name": "vue-3-components",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 5176",
+    "dev": "vite --port 5177",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview --port 4176"
+    "preview": "vite preview --port 4177"
   },
   "dependencies": {
+    "@vitejs/plugin-vue-jsx": "2.0.1",
     "vue": "3.2.41"
   },
   "devDependencies": {

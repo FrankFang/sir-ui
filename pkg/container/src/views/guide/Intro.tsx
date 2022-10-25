@@ -1,4 +1,5 @@
 import { defineComponent, onMounted, ref } from 'vue';
+import { MicroApp } from '../../components/MicroApp';
 
 export const Intro = defineComponent({
   setup: (props, context) => {

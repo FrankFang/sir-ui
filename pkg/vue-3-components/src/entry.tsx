@@ -1,9 +1,9 @@
 import 'vite/modulepreload-polyfill'
 import { createApp } from 'vue'
-import App from './App.vue'
+import { App } from './App'
 
 window.apps = window.apps || {}
-window.apps.app3 = {
+window.apps["vue-3-components"] = {
   app: null,
   create: () => {
   },
