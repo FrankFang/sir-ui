@@ -1,0 +1,34 @@
+.icons_wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  :global(.sir-icon) {
+    width: 2em;
+    height: 2em;
+    margin: 8px;
+  }
+}
+.article{
+  section{
+    margin-bottom: 32px;
+  }
+  h2{
+    font-size: 2em;
+  }
+}
+
+.red{
+  fill: red;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin {
+  animation: spin 1s linear infinite;
+}

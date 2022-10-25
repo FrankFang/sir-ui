@@ -3,7 +3,7 @@ import { createApp } from 'vue'
 import { App } from './App'
 
 window.apps = window.apps || {}
-window.apps["vue-3-components"] = {
+window.apps["icon-vue-3"] = {
   app: null,
   create: () => {
   },

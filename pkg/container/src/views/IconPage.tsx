@@ -5,7 +5,7 @@ export const IconPage = defineComponent({
     return () => (
       <div p-16px>
         <MicroApp
-          name="vue-3-components"
+          name="icon-vue-3"
           entry={isDev
             ? 'http://localhost:5177/src/entry.tsx'
             : 'http://localhost:4177/manifest.json'}

@@ -34,7 +34,7 @@ export const svgsprites = (options: Options = {}): Plugin => {
     const { data: code } = optimize(sprites.toString({ inline }), {
       plugins: [
         'cleanupAttrs', 'removeDoctype', 'removeComments', 'removeTitle', 'removeDesc', 'removeEmptyAttrs',
-        { name: "removeAttrs", params: { attrs: "(data-name|data-xxx)" } }
+        { name: "removeAttrs", params: { attrs: "(data-name|fill)" } }
       ]
     })
     return code
