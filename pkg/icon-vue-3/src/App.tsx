@@ -1,34 +1,29 @@
-import { defineComponent } from 'vue';
-import { Icon } from './Icon';
-import s from './App.module.scss'
+import { defineComponent, provide } from 'vue'
+import './App.module.scss'
+import { ShowCase } from 'showcase-vue-3'
+import 'showcase-vue-3/dist/style.css'
+import { Demo1 } from './demos/Demo1'
+import { Demo2 } from './demos/Demo2'
+import { Demo3 } from './demos/Demo3'
 export const App = defineComponent({
   setup: (props, context) => {
+    provide('components', import.meta.glob('./demos/*.tsx', { eager: true }))
+    provide('codes', import.meta.glob('./demos/*.tsx', { eager: true, as: 'raw' }))
     return () => (
-      <article class={s.article}>
+      <article>
         <section>
           <h2>图标</h2>
-          <div class={s.icons_wrapper}>
-            <Icon name="add" /> <Icon name="add-circled" /> <Icon name="add-squared" /> <Icon name="alarm" /> <Icon name="arithmetic" /> <Icon name="asc" /> <Icon name="attachment" /> <Icon name="briefcase" /> <Icon name="calculator" /> <Icon name="calendar" />
-            <Icon name="camera" /> <Icon name="check-mark" /> <Icon name="check-mark-circled" /> <Icon name="checked-box" /> <Icon name="checked-radio" /> <Icon name="close" /> <Icon name="close-circled" /> <Icon name="company" /> <Icon name="components" /> <Icon name="compose" /> <Icon name="contact" /> <Icon name="cube" /> <Icon name="customer-service" /> <Icon name="delete" /> <Icon name="desc" /> <Icon name="down" /> <Icon name="download" /> <Icon name="download-from-cloud" /> <Icon name="download-to-local" /> <Icon name="edit" /> <Icon name="entrance" /> <Icon name="exit" /> <Icon name="expand" /> <Icon name="filter" /> <Icon name="flame" /> <Icon name="flashlight" /> <Icon name="fold" /> <Icon name="four-leaves" /> <Icon name="home" /> <Icon name="info" /> <Icon name="left" />
-            <Icon name="line-chart" /> <Icon name="link" /> <Icon name="location" /> <Icon name="lock" /> <Icon name="mail" /> <Icon name="menu" /> <Icon name="message" /> <Icon name="minus-squared" /> <Icon name="person" /> <Icon name="phone" /> <Icon name="picture" /> <Icon name="pie-chart" /> <Icon name="power" /> <Icon name="question" /> <Icon name="refresh" /> <Icon name="right" /> <Icon name="ring" /> <Icon name="scan" /> <Icon name="search" /> <Icon name="settings" /> <Icon name="shrink" /> <Icon name="sort" /> <Icon name="switch-left" /> <Icon name="switch-right" /> <Icon name="three-dots" />
-            <Icon name="three-dots-circled" /> <Icon name="three-dots-vertical" /> <Icon name="three-squares" /> <Icon name="three-squares-vertical" /> <Icon name="unchecked-box" /> <Icon name="unchecked-radio" /> <Icon name="unfold" /> <Icon name="up" /> <Icon name="upload" /> <Icon name="upload-from-local" /> <Icon name="upload-to-cloud" /> <Icon name="user" /> <Icon name="users" /> <Icon name="volume" /> <Icon name="wechat" />
-          </div>
+          <ShowCase demo={Demo1} />
         </section>
         <section>
           <h2>有颜色的图标</h2>
-          <div class={s.icons_wrapper}>
-            <Icon name="add" class={s.red} />
-            <Icon name="refresh" class={s.red} />
-          </div>
+          <ShowCase demo={Demo2} />
         </section>
         <section>
           <h2>旋转的图标</h2>
-          <div class={s.icons_wrapper}>
-            <Icon name="add" class={s.spin} />
-            <Icon name="refresh" class={s.spin} />
-          </div>
+          <ShowCase demo={Demo3} />
         </section>
       </article>
     )
-  }
+  },
 })

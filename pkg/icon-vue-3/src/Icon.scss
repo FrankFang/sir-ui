@@ -3,3 +3,15 @@
   height: 1.2em;
   fill: currentColor;
 }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+:where(.sir-icon-spin){
+  animation: spin 1s linear infinite;
+}

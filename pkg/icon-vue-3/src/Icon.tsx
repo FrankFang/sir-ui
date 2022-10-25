@@ -6,11 +6,12 @@ export const Icon = defineComponent({
     name: {
       type: String,
       required: true
-    }
+    },
+    spin: Boolean
   },
   setup: (props, context) => {
     return () => (
-      <svg class="sir-icon">
+      <svg class={["sir-icon", props.spin && "sir-icon-spin"]}>
         <use xlinkHref={'#' + props.name} />
       </svg>
     )

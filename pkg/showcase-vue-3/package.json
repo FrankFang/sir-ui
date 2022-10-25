@@ -1,21 +1,24 @@
 {
-  "name": "vue-3-components",
-  "private": true,
-  "version": "0.0.0",
+  "name": "showcase-vue-3",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/showcase.umd.cjs",
+  "module": "./dist/showcase.js",
+  "types": "./dist/ShowCase.d.ts",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite --port 5177",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview --port 4177"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@vitejs/plugin-vue-jsx": "2.0.1",
-    "svgo": "2.8.0",
-    "showcase-vue-3": "0.0.1",
-    "svgstore": "3.0.1",
+    "highlight.js": "11.6.0",
     "vue": "3.2.41"
   },
   "devDependencies": {
+    "@rollup/plugin-typescript": "9.0.2",
     "@vitejs/plugin-vue": "3.1.2",
     "typescript": "4.8.4",
     "vite": "3.1.8",
