@@ -9,3 +9,7 @@
 .overlay { visibility: hidden; opacity: 0;
   &_active { visibility: visible; opacity: 1; }
 }
+
+.activeLink {
+  color: red;
+}

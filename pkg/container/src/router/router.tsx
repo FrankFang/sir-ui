@@ -5,6 +5,7 @@ import { GuideLayout } from '../layouts/GuideLayout'
 import { HomeLayout } from '../layouts/HomeLayout'
 import { Intro } from '../views/guide/Intro'
 import { Home } from '../views/Home'
+import { IconPage } from '../views/IconPage'
 
 const routes = [
   {
@@ -17,6 +18,12 @@ const routes = [
           { path: 'intro', component: Intro }
         ]
       },
+      {
+        path: 'components', component: GuideLayout,
+        children: [
+          { path: 'icon', component: IconPage }
+        ]
+      }
     ]
   },
   {
